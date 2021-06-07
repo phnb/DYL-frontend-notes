@@ -1,2 +1,2 @@
-# DYL-calendar-project
-frontend learning project
+# DYL-frontend-note
+Here you can find my frontend learning notes!
