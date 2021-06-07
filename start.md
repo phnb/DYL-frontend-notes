@@ -1,4 +1,4 @@
-# react 项目设置
+# TeaBreak团队建议的前端工作流
 
 * cd react && yarn install && cd .. 安装全部依赖包
 * 在 /public/index.html 第10行、14行修改网站介绍, 在第31行修改网站名
