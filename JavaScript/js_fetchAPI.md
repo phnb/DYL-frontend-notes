@@ -225,6 +225,35 @@ const response = await fetch('/users', {
 ```
 
 #### 3.4 上传文件
+如果表单里面有文件选择器，可以用前一个例子的写法，上传的文件包含在整个表单里面，一起提交。
+另一种方法是用脚本添加文件，构造出一个表单，进行上传，请看下面的例子。
 
+```JavaScript
+const input = document.querySelector('input[type="file"]');
+
+const data = new FormData();
+data.append('file', input.files[0]);
+data.append('user', 'foo');
+
+fetch('/avatars', {
+  method: 'POST',
+  body: data
+});
+```
+
+上传二进制文件时，不用修改标头的Content-Type，浏览器会自动设置。
 
 #### 3.5 直接上传二进制数据
+
+fetch()也可以直接上传二进制数据，将 Blob 或 arrayBuffer 数据放在body属性里面。
+
+```JavaScript
+let blob = await new Promise(resolve =>   
+  canvasElem.toBlob(resolve,  'image/png')
+);
+
+let response = await fetch('/article/fetch/post/image', {
+  method:  'POST',
+  body: blob
+});
+```

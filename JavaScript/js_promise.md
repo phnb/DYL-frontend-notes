@@ -1,4 +1,7 @@
 # Promise操作
+
+[参考文章](https://blog.csdn.net/qq_34645412/article/details/81170576?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control)
+
 Promise是异步编程的一种解决方案，可以替代传统的解决方案--回调函数和事件，能够很好的解决异步编程中回调地狱（Callback Hell）的问题。ES6统一了用法，并原生提供了Promise对象。作为对象，Promise有一下两个特点：
 
 - 对象的状态不受外界影响。
