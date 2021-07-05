@@ -3,6 +3,7 @@
 [参考文章](http://www.ruanyifeng.com/blog/2020/09/react-hooks-useeffect-tutorial.html)
 
 ###1. useEffect 第一次不执行
+
 运用useRef和useLayoutEffect来实现useEffect的功能，并且第一次渲染不执行。
 
 ``` JavaScript
@@ -53,4 +54,32 @@ function TextInputWithFocusButton() {
 #### 1.2 useLayoutEffect
 
 其函数签名与 useEffect 相同，但它会在所有的 DOM 变更之后同步调用 effect。可以使用它来读取 DOM 布局并同步触发重渲染。在浏览器执行绘制之前，useLayoutEffect 内部的更新计划将被同步刷新。
+<br>
 
+
+###2. 同一个dev中实现单击和双击⌚️
+
+通过setTimeout()设置一个延时200ms,并通过一个标志位变量count记录当前点击次数
+
+``` JavaScript
+let count = 0;
+class App extends Component {
+    onClick = () => {
+        count += 1;
+        setTimeout(() => {
+          if (count === 1) {
+            console.log('single click: ', count);
+          } else if (count === 2) {
+            console.log('setTimeout onDoubleClick: ', count);
+          }
+          count = 0;
+        }, 300);
+    }
+    
+    render(){
+        return (...)
+    }
+}
+```
+
+再加个 else if (count === 3) 还能实现 3 击。
