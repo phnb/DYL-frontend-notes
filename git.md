@@ -33,45 +33,89 @@
 > 4. **Staged**: 又叫暂存区，存放着已被暂存的文件
 <br>
 
-## Git 基础操作
+## 1. Git 基础操作
 
-### 初始化
+#### 1.1 初始化
 
-##### 1. 新建一个仓库
+##### 1.1.1 新建一个仓库
 >git init
 ###
-##### 2. 克隆（下载）一个现有的仓库
+##### 1.1.2 克隆（下载）一个现有的仓库
 >git clone + url
 ##
 
-### 检查版本状态
+#### 1.2检查版本状态
 
-##### 3. 查看文件的跟踪和提交情况
+##### 1.2.1. 查看文件的跟踪和提交情况
 > git status
 ##
 
-### 暂存和提交
+#### 1.3 暂存和提交
 
-##### 4. 将一个文件添加至暂存
+##### 1.3.1. 将一个文件添加至暂存
 > 
 
-##### 5. 将暂存文件提交
+##### 1.3.2. 将暂存文件提交
 > git commit
 ##
 
-### 同步远程仓库
+#### 1.4同步远程仓库
 
-##### 6. 将已提交内容上传至远程仓库
+##### 1.4.1. 将已提交内容上传至远程仓库
 > git push
 
-##### 7. 获取远程仓库内容
+##### 1.4.2. 获取远程仓库内容
 > git pull
 
-##### 8. 查看历史提交版本
+##### 1.4.3. 查看历史提交版本
 > git log
 
-##### 9. 恢复历史版本
+##### 1.4.4. 恢复历史版本
 > git reset --hard commit_id
 
-##### 10. 查看指令历史，用来确定恢复到未来的哪个版本
+##### 1.4.5. 查看指令历史，用来确定恢复到未来的哪个版本
 > git relog
+
+<br>
+
+## 2. Git 进阶操作
+#### 2.1 Git clone 非 master 分支的代码 (切换到指定 branch分支 或者 tag版本)
+
+第一步: git 源代码到本地
+
+
+> git clone git@github.com:AAAAgito/AGR-Src.git
+
+<br>
+
+
+第二步: 查看所有分支
+
+
+> git branch -a
+
+1 . 绿色的表示本地当前分支
+2 . 红色的表示远程的分支
+```
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/reset_API
+  remotes/origin/server_connect
+```
+<br>
+
+
+第三步: 切换到指定分支(比如说reset_API)
+
+> git checkout reset_API
+<br>
+
+(For tag) 第二步：
+> git tag
+<br>
+
+(For tag) 第三步：
+> git checkout freenect-stack-0.2.2
+
+
